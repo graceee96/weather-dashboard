@@ -1,0 +1,60 @@
+:root {
+    --emphasis: 'Space Mono', monospace;
+    --result-margin-left: 30px;
+    --gradient: linear-gradient(79deg, rgb(99.608% 39.608% 32.157% / 0.73) 0%, rgb(99.608% 39.589% 32.155% / 0.7300231933593749) 6.25%, rgb(99.608% 39.314% 32.126% / 0.73037109375) 12.5%, rgb(99.611% 38.116% 31.999% / 0.731878662109375) 18.75%, rgb(99.617% 34.871% 31.657% / 0.7359375) 25%, rgb(99.631% 30.937% 33.944% / 0.744495849609375) 31.25%, rgb(99.658% 29.625% 44.288% / 0.76005859375) 37.5%, rgb(99.704% 27.463% 62.288% / 0.785687255859375) 43.75%, rgb(99.781% 24.14% 92.246% / 0.825) 50%, rgb(74.673% 20.81% 99.866% / 0.8643127441406251) 56.25%, rgb(51.852% 18.634% 99.926% / 0.8899414062500001) 62.5%, rgb(37.398% 17.311% 99.964% / 0.905504150390625) 68.75%, rgb(29.258% 16.584% 99.985% / 0.9140625) 75%, rgb(25.349% 16.238% 99.995% / 0.918121337890625) 81.25%, rgb(23.889% 16.11% 99.999% / 0.91962890625) 87.5%, rgb(23.552% 16.08% 100% / 0.9199768066406251) 93.75%, rgb(23.529% 16.078% 100% / 0.92) 100% )
+}
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    /* background-image: var(--gradient); */
+}
+
+header, main {
+    border: 1px solid red;
+    min-height: 100vh;
+    padding: 2%;
+}
+
+/* header */
+header {
+    background-color: rgba(254, 254, 250, 0.5);
+}
+
+#logo {
+    font-family: var(--emphasis);
+    font-weight: 700;
+}
+
+/* form */
+
+
+/* past searches */
+
+
+/* results */
+#city {
+    margin-left: var(--result-margin-left);
+    font-family: var(--emphasis);
+    font-size: 7.5rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+
+#search-results h3 {
+    margin-left: var(--result-margin-left);
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#search-results h3 #local-time {
+    font-style: normal;
+}
+
+/* current weather */
+
+
+/* 5-day forecast */

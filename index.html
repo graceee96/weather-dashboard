@@ -10,55 +10,75 @@
 <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- custom stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <header class="col-4">
-                <h1>weather</h1>
-                <h2>03.25.2023 -- 18:39</h2>
+<!-- header -->
+            <header class="col-12 col-lg-3">
+                <h1 id="logo">weather</h1>
+                <h2 id="current-date">03.25.2023 -- 18:39</h2>
 
                 <form>
-                    <h3>Tell me the weather at:</h3>
-                    <input type="text" placeholder="enter city name"> 
+                    <h4 class="tell-me">Tell me the weather at:</h4>
+                    <input type="text" id="input-location" placeholder="enter city name"> 
+
                     <div class="container px-0">
                         <div class="row justify-content-between">
-                            <h3 class="col-2">in:</h3>
+                            <h4 class="tell-me col-2">in:</h4>
                             <div class="col-5">
                                 <input type="radio" id="farenheit" name="temp-unit" checked>
-                                <label for="farenheit">Farenheit (°F)</label>
+                                <label class="degrees" for="farenheit">Farenheit (°F)</label>
                             </div>
                             <div class="col-5">
                                 <input type="radio" id="celsius" name="temp-unit">
-                                <label for="celsius">Celsius (°C)</label>
+                                <label class="degrees" for="celsius">Celsius (°C)</label>
                             </div>
                         </div>
                     </div>
-                    <button type="submit">Search</button>
+                    <button  type="submit">Search</button>
                 </form>
 
                 <section>
                     <h3>Past searches:</h3>
-                    <div></div>
+                    <div>
+                        <button id="past-search">Los Angeles</button>
+                    </div>
                 </section>
             </header>
 
-            <main class="col-8">
-                <h2>CHICAGO</h2>
-                <h3>local time: 03.25.2023 -- 20:39</h3>
+<!-- results -->
+            <main id="search-results" class="col-12 col-lg-9">
+                <h2 id="city">CHICAGO</h2>
+                <h3>@ <span id="local-time">20:39</span></h3>
 
-                <div class="container">
+                <div id="current-weather" class="container">
                     <div class="row">
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
+                        <div class="col-2">
+                            <img id="current-icon" src="https://openweathermap.org/img/wn/10d@2x.png">
+                        </div>
+                        <div class="col-2">
+                            <h5>Current Temperature</h5>
+                            <p></p>
+                        </div>
+                        <div class="col-2">
+                            <h5>Feels like</h5>
+                            <p></p>
+                        </div>
+                        <div class="col-2">
+                            <h5>Humidity</h5>
+                            <p></p>
+                        </div>
+                        <div class="col-2">
+                            <h5>Wind Speed</h5>
+                            <p></p>
+                        </div>
                     </div>
                 </div>
 
@@ -66,11 +86,11 @@
                     <h4>5-Day Forecast</h4>
                     <div class="container">
                         <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-2"></div>
-                            <div class="col-2"></div>
-                            <div class="col-2"></div>
-                            <div class="col-2"></div>
+                            <div class="card col-2"></div>
+                            <div class="card col-2"></div>
+                            <div class="card col-2"></div>
+                            <div class="card col-2"></div>
+                            <div class="card col-2"></div>
                         </div>
                     </div>
                 </div>
