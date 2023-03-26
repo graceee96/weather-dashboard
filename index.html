@@ -7,40 +7,76 @@
     <title>Weather Dashboard</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
-
+<!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+<!-- custom stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <header>
-        <h1>weather dashboard</h1>
+    <div class="container">
+        <div class="row">
+            <header class="col-4">
+                <h1>weather</h1>
+                <h2>03.25.2023 -- 18:39</h2>
 
-        <form class="form-floating mb-3">
-            <div class="city-search">
-                <input type="text" class="form-control" id="search city" placeholder="enter city name">
-                <label for="floatingInput">search for a city</label>
-            </div>
-            <div class="pick-units">
-                <div>
-                    <input type="radio" id="farenheit" name="temp-unit" value="imperial">
-                    <label for="farenheit">Farenheit</label>
+                <form>
+                    <h3>Tell me the weather at:</h3>
+                    <input type="text" placeholder="enter city name"> 
+                    <div class="container px-0">
+                        <div class="row justify-content-between">
+                            <h3 class="col-2">in:</h3>
+                            <div class="col-5">
+                                <input type="radio" id="farenheit" name="temp-unit" checked>
+                                <label for="farenheit">Farenheit (°F)</label>
+                            </div>
+                            <div class="col-5">
+                                <input type="radio" id="celsius" name="temp-unit">
+                                <label for="celsius">Celsius (°C)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+
+                <section>
+                    <h3>Past searches:</h3>
+                    <div></div>
+                </section>
+            </header>
+
+            <main class="col-8">
+                <h2>CHICAGO</h2>
+                <h3>local time: 03.25.2023 -- 20:39</h3>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                    </div>
                 </div>
+
                 <div>
-                    <input type="radio" id="celsius" name="temp-unit" value="metric">
-                    <label for="celsius">Celsius</label>
+                    <h4>5-Day Forecast</h4>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-2"></div>
+                            <div class="col-2"></div>
+                            <div class="col-2"></div>
+                            <div class="col-2"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <button type="submit" id="search-button">search</button>
-        </form>
-
-        <section id="search-history">
-        </section>
-    </header>
-
-    <main id="search-results">
-    </main>
+            </main>
+        </div>
+    </div>
 
 <!-- javascript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
