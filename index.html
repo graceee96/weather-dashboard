@@ -17,8 +17,21 @@
         <h1>weather dashboard</h1>
 
         <form class="form-floating mb-3">
-            <input type="text" class="form-control" id="search city">
-            <label for="floatingInput">search for a city</label>
+            <div class="city-search">
+                <input type="text" class="form-control" id="search city" placeholder="enter city name">
+                <label for="floatingInput">search for a city</label>
+            </div>
+            <div class="pick-units">
+                <div>
+                    <input type="radio" id="farenheit" name="temp-unit" value="imperial">
+                    <label for="farenheit">Farenheit</label>
+                </div>
+                <div>
+                    <input type="radio" id="celsius" name="temp-unit" value="metric">
+                    <label for="celsius">Celsius</label>
+                </div>
+            </div>
+            
             <button type="submit" id="search-button">search</button>
         </form>
 
