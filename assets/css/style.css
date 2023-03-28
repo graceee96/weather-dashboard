@@ -63,7 +63,7 @@ header {
 /* form */
 header #search-form {
     /* border: 1px solid cyan; */
-    margin-top: 4vw;
+    margin-top: 6vw;
 }
 
 header #search-form .tell-me {
@@ -80,7 +80,7 @@ header #search-form #input-location {
     border-top: none;
     border-left: none;
     border-right: none;
-    background: transparent;
+    background-color: transparent;
     font-family: var(--emphasis);
     font-size: 1.75vw;
     font-weight: bold;
@@ -137,13 +137,15 @@ header #search-btn {
 }
 
 header #search-btn:hover {
-    background: transparent;
+    background-color: transparent;
     color: black;
 }
 
-
 /* past searches */
-
+header #search-history {
+    border: 1px solid magenta;
+    margin-top: 6vw;
+}
 
 /* results */
 #city {
@@ -275,13 +277,3 @@ header #search-btn:hover {
     font-weight: 500;
     font-size: 1.15vw;
 }
-
-
-/* grainy filter */
-/* .grainy-filter {
-    z-index: 1;
-    background-image: var(--grainyfilter);
-    background-size: 400%;
-    width: 100vw;
-    height: 100vh;
-} */

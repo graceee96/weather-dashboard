@@ -7,6 +7,9 @@
 //global variables
 
 
+//function - reset (text of city, local time, current weather info, 5-day dates+weather info text is empty)
+
+
 //function - render time on page
 
 
