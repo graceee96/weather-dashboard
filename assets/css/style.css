@@ -1,7 +1,11 @@
 :root {
+    --gradient: radial-gradient(96.01% 189.86% at 0% 10.6%, #FCE87F 0%, rgba(254, 187, 178, 0.81) 37.56%, rgba(241, 159, 189, 0.694337) 44.54%, rgba(228, 129, 224, 0.57) 53.72%, rgba(158, 122, 221, 0.62) 71.31%, rgba(132, 84, 234, 0.481681) 77.46%, rgba(49, 57, 250, 0.57) 100%);
+    --grainyfilter: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='9.57' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    
+    --result-margin-left: 4rem;
+    
+    /* fonts */
     --emphasis: 'Space Mono', monospace;
-    --result-margin-left: 30px;
-    --gradient: linear-gradient(79deg, rgb(99.608% 39.608% 32.157% / 0.73) 0%, rgb(99.608% 39.589% 32.155% / 0.7300231933593749) 6.25%, rgb(99.608% 39.314% 32.126% / 0.73037109375) 12.5%, rgb(99.611% 38.116% 31.999% / 0.731878662109375) 18.75%, rgb(99.617% 34.871% 31.657% / 0.7359375) 25%, rgb(99.631% 30.937% 33.944% / 0.744495849609375) 31.25%, rgb(99.658% 29.625% 44.288% / 0.76005859375) 37.5%, rgb(99.704% 27.463% 62.288% / 0.785687255859375) 43.75%, rgb(99.781% 24.14% 92.246% / 0.825) 50%, rgb(74.673% 20.81% 99.866% / 0.8643127441406251) 56.25%, rgb(51.852% 18.634% 99.926% / 0.8899414062500001) 62.5%, rgb(37.398% 17.311% 99.964% / 0.905504150390625) 68.75%, rgb(29.258% 16.584% 99.985% / 0.9140625) 75%, rgb(25.349% 16.238% 99.995% / 0.918121337890625) 81.25%, rgb(23.889% 16.11% 99.999% / 0.91962890625) 87.5%, rgb(23.552% 16.08% 100% / 0.9199768066406251) 93.75%, rgb(23.529% 16.078% 100% / 0.92) 100% )
 }
 
 * {
@@ -9,11 +13,25 @@
 }
 
 body {
-    /* background-image: var(--gradient); */
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: bg-animation 25s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    50% {
+        background-position: center;
+    }
+    100% {
+        background-position: right top;
+    }
 }
 
 header, main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     min-height: 100vh;
     padding: 2%;
 }
@@ -21,6 +39,8 @@ header, main {
 /* header */
 header {
     background-color: rgba(254, 254, 250, 0.5);
+    border-radius: 0 2.5rem 2.5rem 0;
+    padding: 2.5rem;
 }
 
 #logo {
@@ -37,6 +57,7 @@ header {
 /* results */
 #city {
     margin-left: var(--result-margin-left);
+    margin-top: 4rem;
     font-family: var(--emphasis);
     font-size: 7.5rem;
     text-transform: uppercase;
@@ -45,6 +66,7 @@ header {
 
 #search-results h3 {
     margin-left: var(--result-margin-left);
+    margin-top: -2rem;
     font-size: 4rem;
     font-style: italic;
     font-weight: 400;
@@ -55,6 +77,70 @@ header {
 }
 
 /* current weather */
+#current-weather {
+    margin-left: var(--result-margin-left);
+    margin-top: -0.5rem;
+    border: 2px solid black;
+    width: 85%;
+    height: 15rem;
+}
+
+#current-weather td {
+    border: 2px solid black;
+    width: 25%;
+    padding: 1%;
+}
+
+#current-weather #current-icon {
+    height: 75%;
+    margin: -20px;
+}
+
+#current-weather .current-header {
+    margin: .5rem 0 0 .5rem;
+    font-size: 2rem;
+}
+
+#current-weather .current-stats {
+    margin-right: 0.25rem;
+    margin-bottom: -1rem;
+    font-family: var(--emphasis);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 5rem;
+    text-align: end;
+}
+#current-weather #current-temp {
+    margin-bottom: -0.25rem;
+}
+
+#current-weather #current-wind {
+    margin-bottom: -0.75rem;
+    font-size: 3.75rem;
+}
 
 
 /* 5-day forecast */
+#fiveday-forecast .five-day-heading {
+    margin-left: var(--result-margin-left);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+#fiveday-forecast #five-day {
+    margin-left: var(--result-margin-left);
+    width: 85%;
+}
+
+#fiveday-forecast #five-day .custom-card {
+    border: 2px solid black;
+}
+
+/* grainy filter */
+/* .grainy-filter {
+    z-index: 1;
+    background-image: var(--grainyfilter);
+    background-size: 400%;
+    width: 100vw;
+    height: 100vh;
+} */
