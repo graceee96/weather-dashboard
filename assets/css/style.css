@@ -1,6 +1,5 @@
 :root {
     --gradient: radial-gradient(96.01% 189.86% at 0% 10.6%, #FCE87F 0%, rgba(254, 187, 178, 0.81) 37.56%, rgba(241, 159, 189, 0.694337) 44.54%, rgba(228, 129, 224, 0.57) 53.72%, rgba(158, 122, 221, 0.62) 71.31%, rgba(132, 84, 234, 0.481681) 77.46%, rgba(49, 57, 250, 0.57) 100%);
-    --grainyfilter: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='9.57' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     
     --result-margin-left: 4vw;
     
@@ -97,6 +96,31 @@ header #search-form #input-location:focus {
     outline: none;
 }
 
+header #search-form .contain-in {
+    height: 4vw;
+}
+
+header #search-form select {
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 0.25vw;
+    margin: 0;
+    font-family: var(--emphasis);
+    font-size: 1.75vw;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+header #search-form select:focus {
+    outline: none;
+}
+
 header #search-btn {
     margin-top: 2vw;
     display: block;
@@ -116,6 +140,8 @@ header #search-btn:hover {
     background: transparent;
     color: black;
 }
+
+
 /* past searches */
 
 
