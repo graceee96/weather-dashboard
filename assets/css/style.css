@@ -2,7 +2,7 @@
     --gradient: radial-gradient(96.01% 189.86% at 0% 10.6%, #FCE87F 0%, rgba(254, 187, 178, 0.81) 37.56%, rgba(241, 159, 189, 0.694337) 44.54%, rgba(228, 129, 224, 0.57) 53.72%, rgba(158, 122, 221, 0.62) 71.31%, rgba(132, 84, 234, 0.481681) 77.46%, rgba(49, 57, 250, 0.57) 100%);
     --grainyfilter: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='9.57' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     
-    --result-margin-left: 4rem;
+    --result-margin-left: 4vw;
     
     /* fonts */
     --emphasis: 'Space Mono', monospace;
@@ -43,9 +43,26 @@ header {
     padding: 2.5rem;
 }
 
-#logo {
+#title {
+    border: 1px solid red;
+}
+
+#title img {
+    height: 5.5vw;
+}
+
+#title #logo {
+    margin-top: -2.75vw;
     font-family: var(--emphasis);
+    font-size: 5vw;
     font-weight: 700;
+}
+
+#title #current-date {
+    margin-top: -1vw;
+    font-size: 2vw;
+    font-weight: 400;
+    text-align: end;
 }
 
 /* form */
@@ -57,17 +74,17 @@ header {
 /* results */
 #city {
     margin-left: var(--result-margin-left);
-    margin-top: 4rem;
+    margin-top: 5rem;
     font-family: var(--emphasis);
-    font-size: 7.5rem;
+    font-size: 7.5vw;
     text-transform: uppercase;
-    letter-spacing: .5rem;
+    letter-spacing: 0.5vw;
 }
 
 #search-results h3 {
     margin-left: var(--result-margin-left);
-    margin-top: -2rem;
-    font-size: 4rem;
+    margin-top: -2.5vw;
+    font-size: 4.5vw;
     font-style: italic;
     font-weight: 400;
 }
@@ -82,7 +99,7 @@ header {
     margin-top: -0.5rem;
     border: 2px solid black;
     width: 85%;
-    height: 15rem;
+    height: 14vw;
 }
 
 #current-weather td {
@@ -98,7 +115,7 @@ header {
 
 #current-weather .current-header {
     margin: .5rem 0 0 .5rem;
-    font-size: 2rem;
+    font-size: 2vw;
 }
 
 #current-weather .current-stats {
@@ -107,7 +124,7 @@ header {
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
-    font-size: 5rem;
+    font-size: 5vw;
     text-align: end;
 }
 #current-weather #current-temp {
@@ -115,8 +132,9 @@ header {
 }
 
 #current-weather #current-wind {
-    margin-bottom: -0.75rem;
-    font-size: 3.75rem;
+    margin-bottom: -0.5rem;
+    font-size: 3.25vw;
+    white-space: nowrap;
 }
 
 /* 5-day forecast */
