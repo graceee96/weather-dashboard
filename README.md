@@ -10,6 +10,8 @@ N/A
 Link to deployed application: graceee96.github.io/weather-dashboard
 
 ## Credits
+Icon in header (sun behind cloud) from Google Icons.
+
 ### APIs used
 * Bootstrap v5.1.3
 * OpenWeather

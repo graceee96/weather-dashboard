@@ -42,18 +42,18 @@ header {
     padding: 2.5vw;
 }
 
-#title img {
+header #title img {
     height: 5.5vw;
 }
 
-#title #logo {
+header #title #logo {
     margin-top: -2.75vw;
     font-family: var(--emphasis);
     font-size: 5vw;
     font-weight: 700;
 }
 
-#title #current-date {
+header #title #current-date {
     margin-top: -1vw;
     font-size: 2.5vw;
     font-weight: 400;
@@ -143,9 +143,46 @@ header #search-btn:hover {
 
 /* past searches */
 header #search-history {
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
     margin-top: 6vw;
 }
+
+header #search-history h3 {
+    font-size: 2.75vw;
+    font-weight: 600;
+}
+
+header #search-history #search-list {
+    margin-top: -1vw;
+    border: 2px solid black;
+    padding: 0.75vw;
+    height: 21vw;
+    border-radius: 0 0 2.5vw 0;
+    overflow: hidden;
+}
+
+header #search-history #search-list:hover {
+    overflow-y: auto;
+}
+
+header #search-history #search-list .past-search {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5vw;
+    border: 2px solid black;
+    padding: 0.25vw;
+    background-color: transparent;
+    font-family: var(--emphasis);
+    font-size: 1.75vw;
+    font-weight: bold;
+    font-style: italic;
+}
+
+header #search-history #search-list .past-search:hover {
+    background-color: black;
+    color: white;
+}
+
 
 /* results */
 #city {
