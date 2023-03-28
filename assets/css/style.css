@@ -39,8 +39,8 @@ header, main {
 /* header */
 header {
     background-color: rgba(254, 254, 250, 0.5);
-    border-radius: 0 2.5rem 2.5rem 0;
-    padding: 2.5rem;
+    border-radius: 0 2.5vw 2.5vw 0;
+    padding: 2.5vw;
 }
 
 #title {
@@ -74,7 +74,7 @@ header {
 /* results */
 #city {
     margin-left: var(--result-margin-left);
-    margin-top: 5rem;
+    margin-top: 6vw;
     font-family: var(--emphasis);
     font-size: 7.5vw;
     text-transform: uppercase;
@@ -96,7 +96,7 @@ header {
 /* current weather */
 #current-weather {
     margin-left: var(--result-margin-left);
-    margin-top: -0.5rem;
+    margin-top: -0.5vw;
     border: 2px solid black;
     width: 85%;
     height: 14vw;
@@ -114,13 +114,13 @@ header {
 }
 
 #current-weather .current-header {
-    margin: .5rem 0 0 .5rem;
+    margin: 0.5vw 0 0 0.5vw;
     font-size: 2vw;
 }
 
 #current-weather .current-stats {
-    margin-right: 0.25rem;
-    margin-bottom: -1rem;
+    margin-right: 0.25vw;
+    margin-bottom: -1vw;
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
@@ -128,31 +128,31 @@ header {
     text-align: end;
 }
 #current-weather #current-temp {
-    margin-bottom: -0.25rem;
+    margin-bottom: -0.25vw;
 }
 
 #current-weather #current-wind {
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.5vw;
     font-size: 3.25vw;
     white-space: nowrap;
 }
 
 /* 5-day forecast */
 #fiveday-forecast {
-    margin-top: 5rem;
+    margin-top: 4.5vw;
 }
 
 #fiveday-forecast .five-day-heading {
     margin-left: var(--result-margin-left);
-    font-size: 3rem;
+    font-size: 3.25vw;
     font-weight: 600;
 }
 
 #fiveday-forecast #five-day {
     margin-left: var(--result-margin-left);
-    margin-top: -0.25rem;
+    margin-top: -0.25vw;
     width: 85%;
-    height: 15rem;
+    height: 15vw;
 }
 
 #fiveday-forecast #five-day .custom-card {
@@ -170,6 +170,7 @@ header {
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
+    font-size: 1.25vw;
 }
 
 #fiveday-forecast #five-day .custom-card .fiveday-tempbox {
@@ -178,26 +179,27 @@ header {
 
 #fiveday-forecast #five-day .custom-card .fiveday-tempbox .fiveday-icon {
     display: block;
-    margin: -0.5rem auto;
+    margin: -0.75vw auto;
 }
 
 #fiveday-forecast #five-day .custom-card .fiveday-tempbox h5 {
-    margin-top: -1.25rem;
+    margin-top: -1.25vw;
     text-align: center;
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
-    font-size: 3rem;
+    font-size: 3.25vw;
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body {
-    padding: 0.5rem;
+    padding: 0.5vw;
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body ul {
     display: block;
     margin: 0;
     font-weight: 500;
+    font-size: 1.15vw;
 }
 
 
