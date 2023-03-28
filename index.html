@@ -29,8 +29,6 @@
                     <h1 id="logo">weather</h1>
                     <h2 id="current-date">03.25.2023</h2>
                 </div>
-                
-                
 
                 <form id="search-form">
                     <h4 class="tell-me">Tell me the weather at:</h4>
@@ -39,13 +37,15 @@
                     <div class="container px-0">
                         <div class="row justify-content-between">
                             <h4 class="tell-me col-2">in:</h4>
-                            <select name="temp-units" id="select-units" class="form-select col-9">
-                                <option selected>Farenheit (°F)</option>
-                                <option>Celsius (°C)</option>
-                            </select>
+                            <div class="custom-select col-10">
+                                <select name="temp-units" id="select-units" class="form-select">
+                                    <option selected>Farenheit (°F)</option>
+                                    <option>Celsius (°C)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <button  type="submit">Search</button>
+                    <button id="search-btn" type="submit">Search</button>
                 </form>
 
                 <section>

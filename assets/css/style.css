@@ -43,10 +43,6 @@ header {
     padding: 2.5vw;
 }
 
-#title {
-    border: 1px solid red;
-}
-
 #title img {
     height: 5.5vw;
 }
@@ -60,14 +56,66 @@ header {
 
 #title #current-date {
     margin-top: -1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
     font-weight: 400;
     text-align: end;
 }
 
 /* form */
+header #search-form {
+    /* border: 1px solid cyan; */
+    margin-top: 4vw;
+}
 
+header #search-form .tell-me {
+    margin-bottom: 1vw;
+    font-weight: 500;
+    font-size: 1.85vw;
+}
 
+header #search-form #input-location {
+    width: 100%;
+    margin-bottom: 1vw;
+    padding: 0.25vw;
+    border: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    font-family: var(--emphasis);
+    font-size: 1.75vw;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+header #search-form #input-location::placeholder {
+    color: black;
+}
+
+header #search-form #input-location:focus {
+    outline: none;
+}
+
+header #search-btn {
+    margin-top: 2vw;
+    display: block;
+    width: 100%;
+    padding: 0.25vw;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    font-family: var(--emphasis);
+    font-size: 1.75vw;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+header #search-btn:hover {
+    background: transparent;
+    color: black;
+}
 /* past searches */
 
 
