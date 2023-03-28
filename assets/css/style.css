@@ -119,22 +119,69 @@ header {
     font-size: 3.75rem;
 }
 
-
 /* 5-day forecast */
+#fiveday-forecast {
+    margin-top: 5rem;
+}
+
 #fiveday-forecast .five-day-heading {
     margin-left: var(--result-margin-left);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
 }
 
 #fiveday-forecast #five-day {
     margin-left: var(--result-margin-left);
+    margin-top: -0.25rem;
     width: 85%;
+    height: 15rem;
 }
 
 #fiveday-forecast #five-day .custom-card {
+    padding: 0;
     border: 2px solid black;
 }
+
+#fiveday-forecast #five-day .custom-card .custom-card-header {
+    background-color: black;
+    color: white;
+}
+
+#fiveday-forecast #five-day .custom-card .custom-card-header .fiveday-date {
+    text-align: center;
+    font-family: var(--emphasis);
+    font-weight: bold;
+    font-style: italic;
+}
+
+#fiveday-forecast #five-day .custom-card .fiveday-tempbox {
+    border-bottom: 2px solid black;
+}
+
+#fiveday-forecast #five-day .custom-card .fiveday-tempbox .fiveday-icon {
+    display: block;
+    margin: -0.5rem auto;
+}
+
+#fiveday-forecast #five-day .custom-card .fiveday-tempbox h5 {
+    margin-top: -1.25rem;
+    text-align: center;
+    font-family: var(--emphasis);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 3rem;
+}
+
+#fiveday-forecast #five-day .custom-card .custom-card-body {
+    padding: 0.5rem;
+}
+
+#fiveday-forecast #five-day .custom-card .custom-card-body ul {
+    display: block;
+    margin: 0;
+    font-weight: 500;
+}
+
 
 /* grainy filter */
 /* .grainy-filter {

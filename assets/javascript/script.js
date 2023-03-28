@@ -17,3 +17,12 @@
 
 
 //fetch - render weather onto page when past searches list is clicked
+
+
+//init function - display time
+
+
+//click function - show current weather
+
+
+//click function - show past searches
