@@ -1,12 +1,8 @@
-//html elements
-
-//api links
-
-
-//global variables
+//variables
 var now = dayjs();
 var latitude;
 var longitude;
+var citySearch;
 var cityName;
 
 var units = $('#select-units').val();
@@ -27,7 +23,7 @@ function resetDisplay() {
 
 //fetch - geocoding api
 function fetchCoordinates() {
-    var citySearch = $('#input-location').val().trim();
+    
     var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
     console.log(geocodeURL);
 
@@ -113,7 +109,10 @@ function renderFiveDay() {
         })
 }
 
-//fetch - render weather onto page when past searches list is clicked
+//create button & save to local storage
+
+
+//loop through local storage & create buttons
 
 
 //init function - display time, everything is blank
@@ -130,8 +129,10 @@ init();
 $('#search-btn').click(function(event) {
     event.preventDefault();
 
+    citySearch = $('#input-location').val().trim();
+
     resetDisplay();
-    setTimeout(fetchCoordinates(), 500)
+    setTimeout(fetchCoordinates, 500)
 })
 
 //click function - show past searches - event delegation?????????????????????
