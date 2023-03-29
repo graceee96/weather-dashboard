@@ -185,11 +185,12 @@ header #search-history #search-list .past-search:hover {
 
 
 /* results */
-/* #search-results {
+#result-success, #invalid-msg {
     display: none;
-} */
+}
 
-#search-results #city {
+#search-results #result-success #city,
+#search-results #invalid-msg #error {
     margin-left: var(--result-margin-left);
     margin-top: 6vw;
     font-family: var(--emphasis);

@@ -59,128 +59,133 @@
 
 <!-- results -->
             <main id="search-results" class="col-12 col-lg-9 p-4">
-                <h2 id="city"></h2>
-                <h3>@ <span id="local-time"></span></h3>
+                <section id="result-success">
+                    <h2 id="city"></h2>
+                    <h3>@ <span id="local-time"></span></h3>
 
-                <table id="current-weather" class="table">
-                    <tbody>
-                        <tr>
-                            <td class="position-relative">
-                                <!-- <h5 class="current-header position-absolute top-0 start-0">Currently</h5> -->
-                                <img src="" alt="" id="current-icon" class="position-absolute top-0 start-0">
-                                <h5 id="current-temp" class="current-stats position-absolute bottom-0 end-0"></h5>
-                            </td>
-                            <td class="position-relative">
-                                <h5 class="current-header position-absolute top-0 start-0">Feels like</h5>
-                                <p id="feels-like" class="current-stats position-absolute bottom-0 end-0"></p>
-                            </td>
-                            <td class="position-relative">
-                                <h5 class="current-header position-absolute top-0 start-0">Humidity</h5>
-                                <p id="current-humidity" class="current-stats position-absolute bottom-0 end-0"></p>
-                            </td>
-                            <td class="position-relative">
-                                <h5 class="current-header position-absolute top-0 start-0">Wind</h5>
-                                <p id="current-wind" class="current-stats position-absolute bottom-0 end-0"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table id="current-weather" class="table">
+                        <tbody>
+                            <tr>
+                                <td class="position-relative">
+                                    <!-- <h5 class="current-header position-absolute top-0 start-0">Currently</h5> -->
+                                    <img src="" alt="" id="current-icon" class="position-absolute top-0 start-0">
+                                    <h5 id="current-temp" class="current-stats position-absolute bottom-0 end-0"></h5>
+                                </td>
+                                <td class="position-relative">
+                                    <h5 class="current-header position-absolute top-0 start-0">Feels like</h5>
+                                    <p id="feels-like" class="current-stats position-absolute bottom-0 end-0"></p>
+                                </td>
+                                <td class="position-relative">
+                                    <h5 class="current-header position-absolute top-0 start-0">Humidity</h5>
+                                    <p id="current-humidity" class="current-stats position-absolute bottom-0 end-0"></p>
+                                </td>
+                                <td class="position-relative">
+                                    <h5 class="current-header position-absolute top-0 start-0">Wind</h5>
+                                    <p id="current-wind" class="current-stats position-absolute bottom-0 end-0"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <div id="fiveday-forecast">
-                    <h4 class="five-day-heading">5-Day Forecast</h4>
-                    <div  class="container px-0">
+                    <div id="fiveday-forecast">
+                        <h4 class="five-day-heading">5-Day Forecast</h4>
+                        <div  class="container px-0">
 
-                        <div id="five-day" class="row d-flex justify-content-between">
-                            <div class="custom-card col-2">
-                                <div class="custom-card-header pt-2 pb-1">
-                                    <h5 id="day1-date" class="fiveday-date"></h5>
-                                </div>
+                            <div id="five-day" class="row d-flex justify-content-between">
+                                <div class="custom-card col-2">
+                                    <div class="custom-card-header pt-2 pb-1">
+                                        <h5 id="day1-date" class="fiveday-date"></h5>
+                                    </div>
 
-                                <div class="fiveday-tempbox">
-                                    <img src="" alt="" id="day1-icon" class="fiveday-icon">
-                                    <h5 id="day1-temp"></h5>
-                                </div>
+                                    <div class="fiveday-tempbox">
+                                        <img src="" alt="" id="day1-icon" class="fiveday-icon">
+                                        <h5 id="day1-temp"></h5>
+                                    </div>
 
-                                <div class="custom-card-body">
-                                    <ul class="p-0">
-                                        <li>Wind: <span id="day1-wind"></span> mph</li>
-                                        <li>Humidity: <span id="day1-humidity"></span>%</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="custom-card col-2">
-                                <div class="custom-card-header pt-2 pb-1">
-                                    <h5 id="day2-date" class="fiveday-date"></h5>
-                                </div>
-                                <div class="fiveday-tempbox">
-                                    <img src="" alt="" id="day2-icon" class="fiveday-icon">
-                                    <h5 id="day2-temp"></h5>
-                                </div>
-                                <div class="custom-card-body">
-                                    <ul class="p-0">
-                                        <li>Wind: <span id="day2-wind"></span> mph</li>
-                                        <li>Humidity: <span id="day2-humidity"></span>%</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="custom-card col-2">
-                                <div class="custom-card-header pt-2 pb-1">
-                                    <h5 id="day3-date" class="fiveday-date"></h5>
+                                    <div class="custom-card-body">
+                                        <ul class="p-0">
+                                            <li>Wind: <span id="day1-wind"></span> mph</li>
+                                            <li>Humidity: <span id="day1-humidity"></span>%</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="fiveday-tempbox">
-                                    <img src="" alt="" id="day3-icon" class="fiveday-icon">
-                                    <h5 id="day3-temp"></h5>
+                                <div class="custom-card col-2">
+                                    <div class="custom-card-header pt-2 pb-1">
+                                        <h5 id="day2-date" class="fiveday-date"></h5>
+                                    </div>
+                                    <div class="fiveday-tempbox">
+                                        <img src="" alt="" id="day2-icon" class="fiveday-icon">
+                                        <h5 id="day2-temp"></h5>
+                                    </div>
+                                    <div class="custom-card-body">
+                                        <ul class="p-0">
+                                            <li>Wind: <span id="day2-wind"></span> mph</li>
+                                            <li>Humidity: <span id="day2-humidity"></span>%</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="custom-card-body">
-                                    <ul class="p-0">
-                                        <li>Wind: <span id="day3-wind"></span> mph</li>
-                                        <li>Humidity: <span id="day3-humidity"></span>%</li>
-                                    </ul>
-                                </div>
-                            </div>
+                                <div class="custom-card col-2">
+                                    <div class="custom-card-header pt-2 pb-1">
+                                        <h5 id="day3-date" class="fiveday-date"></h5>
+                                    </div>
 
-                            <div class="custom-card col-2">
-                                <div class="custom-card-header pt-2 pb-1">
-                                    <h5 id="day4-date" class="fiveday-date"></h5>
+                                    <div class="fiveday-tempbox">
+                                        <img src="" alt="" id="day3-icon" class="fiveday-icon">
+                                        <h5 id="day3-temp"></h5>
+                                    </div>
+
+                                    <div class="custom-card-body">
+                                        <ul class="p-0">
+                                            <li>Wind: <span id="day3-wind"></span> mph</li>
+                                            <li>Humidity: <span id="day3-humidity"></span>%</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="fiveday-tempbox">
-                                    <img src="" alt="" id="day4-icon" class="fiveday-icon">
-                                    <h5 id="day4-temp"></h5>
-                                </div>
-                                <div class="custom-card-body">
-                                    <ul class="p-0">
-                                        <li>Wind: <span id="day4-wind"></span> mph</li>
-                                        <li>Humidity: <span id="day4-humidity"></span>%</li>
-                                    </ul>
-                                </div>
-                            </div>
+                                <div class="custom-card col-2">
+                                    <div class="custom-card-header pt-2 pb-1">
+                                        <h5 id="day4-date" class="fiveday-date"></h5>
+                                    </div>
 
-                            <div class="custom-card col-2">
-                                <div class="custom-card-header pt-2 pb-1">
-                                    <h5 id="day5-date" class="fiveday-date"></h5>
+                                    <div class="fiveday-tempbox">
+                                        <img src="" alt="" id="day4-icon" class="fiveday-icon">
+                                        <h5 id="day4-temp"></h5>
+                                    </div>
+                                    <div class="custom-card-body">
+                                        <ul class="p-0">
+                                            <li>Wind: <span id="day4-wind"></span> mph</li>
+                                            <li>Humidity: <span id="day4-humidity"></span>%</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="fiveday-tempbox">
-                                    <img src="" alt="" id="day5-icon" class="fiveday-icon">
-                                    <h5 id="day5-temp"></h5>
-                                </div>
-                                <div class="custom-card-body">
-                                    <ul class="p-0">
-                                        <li>Wind: <span id="day5-wind"></span> mph</li>
-                                        <li>Humidity: <span id="day5-humidity"></span>%</li>
-                                    </ul>
+
+                                <div class="custom-card col-2">
+                                    <div class="custom-card-header pt-2 pb-1">
+                                        <h5 id="day5-date" class="fiveday-date"></h5>
+                                    </div>
+                                    <div class="fiveday-tempbox">
+                                        <img src="" alt="" id="day5-icon" class="fiveday-icon">
+                                        <h5 id="day5-temp"></h5>
+                                    </div>
+                                    <div class="custom-card-body">
+                                        <ul class="p-0">
+                                            <li>Wind: <span id="day5-wind"></span> mph</li>
+                                            <li>Humidity: <span id="day5-humidity"></span>%</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                
+                <section id="invalid-msg">
+                    <h2 id="error">INVALID SEARCH</h2>
+                    <h3 class="is-invalid">Your search of "<span id="invalid-search"></span>" came back with no results. Please try again.</h3>
+                </section>
             </main>
-
-            <main id="invalid-msg"></main>
         </div>
     </div>
 

@@ -18,6 +18,13 @@ function todayDateRender() {
         $('#current-date').text(now.format('MM. DD. YYYY'));
     }, 1000)
 }
+
+//function - reset (set display of invalid-msg & result success to none)
+function resetDisplay() {
+    $('#invalid-msg').css('display', 'none');
+    $('#result-success').css('display', 'none');
+}
+
 //fetch - geocoding api
 function fetchCoordinates() {
     var citySearch = $('#input-location').val().trim();
@@ -33,9 +40,11 @@ function fetchCoordinates() {
             console.log(data);
 
             if (data.length === 0) {
-                console.log('invalid input')
+                $('#invalid-msg').css('display', 'block');
+                $('#invalid-search').text(citySearch);
             } else {
                 console.log('success')
+                $('#result-success').css('display', 'block');
 
                 latitude = data[0].lat;
                 longitude = data[0].lon;
@@ -87,10 +96,10 @@ function renderFiveDay() {
         .then(function(data) {
             console.log(data);
 
-            for (var i = 1; i < data.list.length; i+=8) {
+            for (var i = 0; i < data.list.length; i+=8) {
                 var weatherStats = data.list[i];
 
-                for (var i = 0; i <=5; i++) {
+                for (var i = 1; i <=5; i++) {
                     var fiveDayDate = weatherStats.dt
 
                     $('#day' + [i] + '-date').text(dayjs(fiveDayDate).format('MM. DD. YYYY'));
@@ -110,6 +119,7 @@ function renderFiveDay() {
 //init function - display time
 function init() {
     todayDateRender();
+    resetDisplay();
 }
 
 
@@ -121,7 +131,8 @@ init();
 $('#search-btn').click(function(event) {
     event.preventDefault();
 
-    fetchCoordinates();
+    resetDisplay();
+    setTimeout(fetchCoordinates , 500)
 })
 
 //click function - show past searches
