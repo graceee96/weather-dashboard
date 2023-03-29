@@ -8,6 +8,7 @@ var now = dayjs();
 var latitude;
 var longitude;
 var cityName;
+
 var units = $('#select-units').val();
 var searchHistory = [];
 
@@ -27,7 +28,6 @@ function resetDisplay() {
 //fetch - geocoding api
 function fetchCoordinates() {
     var citySearch = $('#input-location').val().trim();
-
     var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
     console.log(geocodeURL);
 
@@ -68,7 +68,7 @@ function renderCurrentWeather() {
             console.log(data);
             
             $('#city').text(cityName);
-            $('<button class="past-search">' + cityName + '</button>').appendTo('#search-list');
+            // $('<button class="past-search">' + cityName + '</button>').appendTo('#search-list');
 
             var localTime = data.dt;
             console.log(dayjs.unix(localTime).format('hh:mm'))
@@ -122,7 +122,7 @@ function init() {
     resetDisplay();
 }
 
-//=======================================================break=======================================================
+//=======================================================
 
 init();
 
@@ -131,7 +131,7 @@ $('#search-btn').click(function(event) {
     event.preventDefault();
 
     resetDisplay();
-    setTimeout(fetchCoordinates, 500)
+    setTimeout(fetchCoordinates(), 500)
 })
 
 //click function - show past searches - event delegation?????????????????????
