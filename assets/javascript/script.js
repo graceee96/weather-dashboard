@@ -7,6 +7,7 @@
 var now = dayjs();
 var latitude;
 var longitude;
+var cityName;
 // var apiKey = '27f987ed5ee13dd96fdf2948248ce840';
 var searchHistory = [];
 
@@ -45,6 +46,7 @@ function fetchCoordinates() {
 
                 latitude = data[0].lat;
                 longitude = data[0].lon;
+                cityName = data[0].name;
 
                 renderCurrentWeather();
             }
@@ -68,14 +70,16 @@ function renderCurrentWeather() {
         .then (function(data) {
             console.log(data);
             
-            $('#city').text(data.name);
+            $('#city').text(cityName);
+            $('<button class="past-search">' + cityName + '</button>').appendTo('#search-list');
 
-            // setInterval(function() {
-            //     var localTime = data.dt;
+            var localTime = data.dt;
+            $('#local-time').text(dayjs(localTime).format('HH:mm'));
 
-            //     $('#local-time').text(now.unix(localTime++).format('HH:mm'))
-            // }, 1000);
+            console.log(typeof data.dt);
 
+            $('#current-icon').attr('src', 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png');
+            $('#current-icon').attr('alt', data.weather[0].description);
             $('#current-temp').text(data.main.temp + '°');
             $('#feels-like').text(data.main.feels_like + '°');
             $('#current-humidity').text(data.main.humidity + '%');

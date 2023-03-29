@@ -241,7 +241,7 @@ header #search-history #search-list .past-search:hover {
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
-    font-size: 3.95vw;
+    font-size: 3.85vw;
     text-align: end;
 }
 #current-weather #current-temp {
@@ -250,7 +250,7 @@ header #search-history #search-list .past-search:hover {
 
 #current-weather #current-wind {
     margin-bottom: -0.5vw;
-    font-size: 2.75vw;
+    font-size: 2.5vw;
     white-space: nowrap;
 }
 
