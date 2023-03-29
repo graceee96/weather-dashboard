@@ -227,7 +227,7 @@ header #search-history #search-list .past-search:hover {
 
 #current-weather #current-icon {
     height: 75%;
-    margin: -20px;
+    margin: -2vw -1vw;
 }
 
 #current-weather .current-header {

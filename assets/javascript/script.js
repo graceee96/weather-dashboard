@@ -8,12 +8,9 @@ var now = dayjs();
 var latitude;
 var longitude;
 var cityName;
+var units = $('#select-units').val();
 // var apiKey = '27f987ed5ee13dd96fdf2948248ce840';
 var searchHistory = [];
-
-
-//function - reset (text of city, local time, current weather info, 5-day dates+weather info text is empty)
-
 
 //function - render time on page
 function todayDateRender() {
@@ -21,10 +18,6 @@ function todayDateRender() {
         $('#current-date').text(now.format('MM. DD. YYYY'));
     }, 1000)
 }
-
-//function - invalid search
-
-
 //fetch - geocoding api
 function fetchCoordinates() {
     var citySearch = $('#input-location').val().trim();
@@ -49,23 +42,18 @@ function fetchCoordinates() {
                 cityName = data[0].name;
 
                 renderCurrentWeather();
+                renderFiveDay();
             }
-
-            // nest render function here
-            
         });
 }
 
 //fetch - render weather onto page (might have to nest fetch within fetch) & create history button
 function renderCurrentWeather() {
-    // fetchCoordinates();
-    var units = $('#select-units').val();
-
     var currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840'
 
     fetch(currentWeatherURL)
         .then(function(response) {
-            return response.json()
+            return response.json();
         })
         .then (function(data) {
             console.log(data);
@@ -88,6 +76,33 @@ function renderCurrentWeather() {
 }
 
 // fetch - five day forecast
+function renderFiveDay() {
+    var fiveDayURL ='https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude +'&lon=' + longitude + '&units=' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840'
+    console.log(fiveDayURL)
+
+    fetch(fiveDayURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+
+            for (var i = 1; i < data.list.length; i+=8) {
+                var weatherStats = data.list[i];
+
+                for (var i = 0; i <=5; i++) {
+                    var fiveDayDate = weatherStats.dt
+
+                    $('#day' + [i] + '-date').text(dayjs(fiveDayDate).format('MM. DD. YYYY'));
+                    $('#day' + [i] + '-icon').attr('src','https://openweathermap.org/img/wn/' + weatherStats.weather[0].icon + '@2x.png');
+                    $('#day' + [i] + '-icon').attr('alt', weatherStats.weather[0].description);
+                    $('#day' + [i] + '-temp').text(weatherStats.main.temp + '°');
+                    $('#day' + [i] + '-wind').text(weatherStats.wind.speed);
+                    $('#day' + [i] + '-humidity').text(weatherStats.main.humidity);
+                }
+            }
+        })
+}
 
 //fetch - render weather onto page when past searches list is clicked
 
@@ -107,8 +122,6 @@ $('#search-btn').click(function(event) {
     event.preventDefault();
 
     fetchCoordinates();
-
-    console.log('i am being clicked');
 })
 
 //click function - show past searches
