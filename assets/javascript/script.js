@@ -119,9 +119,9 @@ function renderFiveDay() {
 //function - render buttons
 function renderButton(locationInput, unitInput) {
     if (unitInput === 'imperial') {
-        $('<button class="past-search" value="' + locationInput + '">' + locationInput + ' (°F)' + '</button>').appendTo($('#search-list'))
+        $('<button class="past-search" value="' + locationInput + '" data-units="' + unitInput + '">' + locationInput + ' (°F)' + '</button>').appendTo($('#search-list'))
     } else if (unitInput === 'metric') {
-        $('<button class="past-search" value="' + locationInput + '">' + locationInput + ' (°C)' + '</button>').appendTo($('#search-list'))
+        $('<button class="past-search" value="' + locationInput + '" data-units="' + unitInput + '">' + locationInput + ' (°C)' + '</button>').appendTo($('#search-list'))
     }
 }
 
@@ -161,3 +161,4 @@ $('#search-btn').click(function(event) {
 })
 
 //click function - show past searches - event delegation?????????????????????
+$()
