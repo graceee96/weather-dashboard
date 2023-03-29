@@ -1,5 +1,4 @@
 //variables
-
 var latitude;
 var longitude;
 var citySearch;
@@ -48,12 +47,16 @@ function fetchCoordinates() {
                 // nest fetch functions here
                 renderCurrentWeather();
                 renderFiveDay();
+                renderButton(cityName, units);
 
                 var searchInput = {
-                    location: citySearch,
+                    location: cityName,
                     degUnit: units
                 };
+
                 searchHistory.push(searchInput);
+                console.log(searchHistory);
+
                 localStorage.setItem('history', JSON.stringify(searchHistory));
             }
         });
@@ -71,7 +74,7 @@ function renderCurrentWeather() {
             console.log(data);
             
             $('#city').text(cityName);
-            // $('<button class="past-search">' + cityName + '</button>').appendTo('#search-list');
+            console.log(cityName)
 
             var localTime = data.dt;
             console.log(dayjs.unix(localTime).format('hh:mm'))
@@ -125,12 +128,18 @@ function renderButton(locationInput, unitInput) {
     }
 }
 
-//loop through local storage & create buttons
+//function - loop through local storage & create buttons
 function showPastSearches() {
     var searches = JSON.parse(localStorage.getItem('history'));
 
-    for (i = 0; i < searches.length; i++) {
-        renderButton(searches[i].location, searches[i].degUnit);
+    console.log(searches);
+
+    if (searches === null) {
+        return;
+    } else {
+        for (i = 0; i < searches.length; i++) {
+            renderButton(searches[i].location, searches[i].degUnit);
+        };
     }
 }
 
@@ -155,10 +164,37 @@ $('#search-btn').click(function(event) {
     resetDisplay();
     setTimeout(function() {
         fetchCoordinates();
-
-        renderButton(citySearch, units);
     }, 500)
 })
 
 //click function - show past searches - event delegation?????????????????????
-$()
+$('#search-list').on('click', $('.past-search'), function(event) {
+    event.preventDefault();
+
+    var element = event.target;
+    console.log(element);
+
+    var toSearch = element.getAttribute('value');
+    units = element.getAttribute('data-units');
+    console.log(toSearch);
+    console.log(units);
+
+    var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + toSearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
+    console.log(geocodeURL);
+
+    fetch(geocodeURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then (function(data) {
+            console.log(data);
+
+            latitude = data[0].lat;
+            longitude = data[0].lon;
+            cityName = data[0].name;
+
+            $('#result-success').css('display', 'block');
+            renderCurrentWeather();
+            renderFiveDay();
+        })
+})
