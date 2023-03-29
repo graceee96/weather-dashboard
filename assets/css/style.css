@@ -185,7 +185,11 @@ header #search-history #search-list .past-search:hover {
 
 
 /* results */
-#city {
+/* #search-results {
+    display: none;
+} */
+
+#search-results #city {
     margin-left: var(--result-margin-left);
     margin-top: 6vw;
     font-family: var(--emphasis);

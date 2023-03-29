@@ -26,12 +26,12 @@
                 <div id="title">
                     <img src="./assets/images/partly_cloudy_day_FILL0_wght400_GRAD0_opsz48.svg" alt="line drawing of sun behind cloud">
                     <h1 id="logo">weather</h1>
-                    <h2 id="current-date">03.25.2023</h2>
+                    <h2 id="current-date"></h2>
                 </div>
 
                 <form id="search-form">
                     <h4 class="tell-me">Tell me the weather at:</h4>
-                    <input type="text" id="input-location" placeholder="enter city name"> 
+                    <input type="text" id="input-location" name="location" placeholder="enter city name"> 
 
                     <div class="container px-0">
                         <div class="row justify-content-between">
@@ -41,8 +41,8 @@
                             
                             <div class="custom-select col-10">
                                 <select name="temp-units" id="select-units">
-                                    <option selected>Farenheit (°F)</option>
-                                    <option>Celsius (°C)</option>
+                                    <option selected value="imperial">Farenheit (°F)</option>
+                                    <option value="metric">Celsius (°C)</option>
                                 </select>
                             </div>
                         </div>
@@ -53,13 +53,6 @@
                 <section id="search-history">
                     <h3>Past searches:</h3>
                     <div id="search-list">
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
-                        <button class="past-search">Los Angeles</button>
                         <button class="past-search">Los Angeles</button>
                     </div>
                 </section>
@@ -76,19 +69,19 @@
                             <td class="position-relative">
                                 <!-- <h5 class="current-header position-absolute top-0 start-0">Currently</h5> -->
                                 <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" id="current-icon" class="position-absolute top-0 start-0">
-                                <h5 id="current-temp" class="current-stats position-absolute bottom-0 end-0">40°</h5>
+                                <h5 id="current-temp" class="current-stats position-absolute bottom-0 end-0"></h5>
                             </td>
                             <td class="position-relative">
                                 <h5 class="current-header position-absolute top-0 start-0">Feels like</h5>
-                                <p id="feels-like" class="current-stats position-absolute bottom-0 end-0">45°</p>
+                                <p id="feels-like" class="current-stats position-absolute bottom-0 end-0"></p>
                             </td>
                             <td class="position-relative">
                                 <h5 class="current-header position-absolute top-0 start-0">Humidity</h5>
-                                <p id="current-humidity" class="current-stats position-absolute bottom-0 end-0">25%</p>
+                                <p id="current-humidity" class="current-stats position-absolute bottom-0 end-0"></p>
                             </td>
                             <td class="position-relative">
                                 <h5 class="current-header position-absolute top-0 start-0">Wind</h5>
-                                <p id="current-wind" class="current-stats position-absolute bottom-0 end-0">8.4 mph</p>
+                                <p id="current-wind" class="current-stats position-absolute bottom-0 end-0"></p>
                             </td>
                         </tr>
                     </tbody>
