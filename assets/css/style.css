@@ -306,11 +306,11 @@ header #search-history #search-list .past-search:hover {
     font-family: var(--emphasis);
     font-weight: bold;
     font-style: italic;
-    font-size: 3.25vw;
+    font-size: 2.5vw;
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body {
-    padding: 0.5vw;
+    padding: 0.25vw;
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body ul {

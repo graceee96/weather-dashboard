@@ -99,15 +99,15 @@ function renderFiveDay() {
             for (var i = 0; i < data.list.length; i+=8) {
                 var weatherStats = data.list[i];
 
-                for (var i = 1; i <=5; i++) {
+                for (var j = 1; j <=5; j++) {
                     var fiveDayDate = weatherStats.dt
 
-                    $('#day' + [i] + '-date').text(dayjs(fiveDayDate).format('MM. DD. YYYY'));
-                    $('#day' + [i] + '-icon').attr('src','https://openweathermap.org/img/wn/' + weatherStats.weather[0].icon + '@2x.png');
-                    $('#day' + [i] + '-icon').attr('alt', weatherStats.weather[0].description);
-                    $('#day' + [i] + '-temp').text(weatherStats.main.temp + '°');
-                    $('#day' + [i] + '-wind').text(weatherStats.wind.speed);
-                    $('#day' + [i] + '-humidity').text(weatherStats.main.humidity);
+                    $('#day' + [j] + '-date').text(dayjs(fiveDayDate).format('MM. DD. YYYY'));
+                    $('#day' + [j] + '-icon').attr('src','https://openweathermap.org/img/wn/' + weatherStats.weather[0].icon + '@2x.png');
+                    $('#day' + [j] + '-icon').attr('alt', weatherStats.weather[0].description);
+                    $('#day' + [j] + '-temp').text(weatherStats.main.temp + '°');
+                    $('#day' + [j] + '-wind').text(weatherStats.wind.speed);
+                    $('#day' + [j] + '-humidity').text(weatherStats.main.humidity);
                 }
             }
         })
