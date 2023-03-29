@@ -1,17 +1,17 @@
 //variables
-var now = dayjs();
+
 var latitude;
 var longitude;
 var citySearch;
 var cityName;
-
-var units = $('#select-units').val();
+var units;
 var searchHistory = [];
 
 //function - render time on page
 function todayDateRender() {
     setInterval(function() {
-        $('#current-date').text(now.format('MM. DD. YYYY'));
+        var now = dayjs();
+        $('#current-date').text(now.format('h:mm:ss A'));
     }, 1000)
 }
 
@@ -48,6 +48,13 @@ function fetchCoordinates() {
                 // nest fetch functions here
                 renderCurrentWeather();
                 renderFiveDay();
+
+                var searchInput = {
+                    location: citySearch,
+                    degUnit: units
+                };
+                searchHistory.push(searchInput);
+                localStorage.setItem('history', JSON.stringify(searchHistory));
             }
         });
 }
@@ -69,7 +76,7 @@ function renderCurrentWeather() {
             var localTime = data.dt;
             console.log(dayjs.unix(localTime).format('hh:mm'))
 
-            $('#local-time').text(dayjs.unix(localTime).format('hh:mm'));
+            $('#local-time').text(dayjs.unix(localTime).format('MM. DD. YYYY'));
 
             $('#current-icon').attr('src', 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png');
             $('#current-icon').attr('alt', data.weather[0].description);
@@ -109,15 +116,28 @@ function renderFiveDay() {
         })
 }
 
-//create button & save to local storage
-
+//function - render buttons
+function renderButton(locationInput, unitInput) {
+    if (unitInput === 'imperial') {
+        $('<button class="past-search" value="' + locationInput + '">' + locationInput + ' (°F)' + '</button>').appendTo($('#search-list'))
+    } else if (unitInput === 'metric') {
+        $('<button class="past-search" value="' + locationInput + '">' + locationInput + ' (°C)' + '</button>').appendTo($('#search-list'))
+    }
+}
 
 //loop through local storage & create buttons
+function showPastSearches() {
+    var searches = JSON.parse(localStorage.getItem('history'));
 
+    for (i = 0; i < searches.length; i++) {
+        renderButton(searches[i].location, searches[i].degUnit);
+    }
+}
 
 //init function - display time, everything is blank
 function init() {
     todayDateRender();
+    showPastSearches();
     resetDisplay();
 }
 
@@ -130,9 +150,14 @@ $('#search-btn').click(function(event) {
     event.preventDefault();
 
     citySearch = $('#input-location').val().trim();
+    units = $('#select-units').val();
 
     resetDisplay();
-    setTimeout(fetchCoordinates, 500)
+    setTimeout(function() {
+        fetchCoordinates();
+
+        renderButton(citySearch, units);
+    }, 500)
 })
 
 //click function - show past searches - event delegation?????????????????????
