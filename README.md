@@ -1,13 +1,21 @@
 # Weather Dashboard
 
 ## Description
+This application allows users to search weather conditions of a city. Users are able to select the temperature units when making their search. In addition, past searches are logged in a search history, so users can revisit weather conditions of cities searched before.
 
 ## Installation
 N/A
 
 ## Usage
+To search, click on the input and input a city. If the search entry is not a city, then an invalid message will pop up. Otherwise, users will see the current weather conditions and the five-day forecast of their search. Furthermore, users can click on the buttons in the Past Searches box to see the weather forecast of that city in the specified units.
 
-Link to deployed application: graceee96.github.io/weather-dashboard
+### Search functionality demonstration
+![Search for a city](./assets/images/search-function.gif)
+
+### Past search functionality demonstration
+![Get weather forecast of a previously searched city](./assets/images/past-search-function.gif)
+
+Link to deployed application: https://graceee96.github.io/weather-dashboard
 
 ## Credits
 Icon in header (sun behind cloud) from Google Icons.

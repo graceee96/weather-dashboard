@@ -37,7 +37,6 @@ function fetchCoordinates() {
                 $('#invalid-msg').css('display', 'block');
                 $('#invalid-search').text(citySearch);
             } else {
-                console.log('success')
                 $('#result-success').css('display', 'block');
 
                 latitude = data[0].lat;
@@ -74,7 +73,6 @@ function renderCurrentWeather() {
             console.log(data);
             
             $('#city').text(cityName);
-            console.log(cityName)
 
             var localTime = data.dt;
             console.log(dayjs.unix(localTime).format('hh:mm'))
@@ -92,8 +90,7 @@ function renderCurrentWeather() {
 
 // fetch - five day forecast
 function renderFiveDay() {
-    var fiveDayURL ='https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude +'&lon=' + longitude + '&units=' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840'
-    console.log(fiveDayURL)
+    var fiveDayURL ='https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude +'&lon=' + longitude + '&units=' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840';
 
     fetch(fiveDayURL)
         .then(function(response) {
@@ -174,20 +171,19 @@ $('#search-list').on('click', $('.past-search'), function(event) {
     var element = event.target;
     console.log(element);
 
-    var toSearch = element.getAttribute('value');
+    citySearch = element.getAttribute('value');
     units = element.getAttribute('data-units');
     console.log(toSearch);
     console.log(units);
 
-    var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + toSearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
-    console.log(geocodeURL);
+    var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
 
     fetch(geocodeURL)
         .then(function(response) {
             return response.json();
         })
         .then (function(data) {
-            console.log(data);
+            // console.log(data);
 
             latitude = data[0].lat;
             longitude = data[0].lon;
