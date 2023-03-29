@@ -310,12 +310,12 @@ header #search-history #search-list .past-search:hover {
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body {
-    padding: 0.25vw;
+    padding: 0.2vw;
 }
 
 #fiveday-forecast #five-day .custom-card .custom-card-body ul {
     display: block;
     margin: 0;
     font-weight: 500;
-    font-size: 1.15vw;
+    font-size: 1.138vw;
 }
