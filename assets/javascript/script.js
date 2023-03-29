@@ -9,7 +9,6 @@ var latitude;
 var longitude;
 var cityName;
 var units = $('#select-units').val();
-// var apiKey = '27f987ed5ee13dd96fdf2948248ce840';
 var searchHistory = [];
 
 //function - render time on page
@@ -29,7 +28,7 @@ function resetDisplay() {
 function fetchCoordinates() {
     var citySearch = $('#input-location').val().trim();
 
-    var geocodeURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
+    var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
     console.log(geocodeURL);
 
     fetch(geocodeURL)
@@ -50,6 +49,7 @@ function fetchCoordinates() {
                 longitude = data[0].lon;
                 cityName = data[0].name;
 
+                // nest fetch functions here
                 renderCurrentWeather();
                 renderFiveDay();
             }
@@ -71,9 +71,9 @@ function renderCurrentWeather() {
             $('<button class="past-search">' + cityName + '</button>').appendTo('#search-list');
 
             var localTime = data.dt;
-            $('#local-time').text(dayjs(localTime).format('HH:mm'));
+            console.log(dayjs.unix(localTime).format('hh:mm'))
 
-            console.log(typeof data.dt);
+            $('#local-time').text(dayjs.unix(localTime).format('hh:mm'));
 
             $('#current-icon').attr('src', 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png');
             $('#current-icon').attr('alt', data.weather[0].description);
@@ -116,14 +116,13 @@ function renderFiveDay() {
 //fetch - render weather onto page when past searches list is clicked
 
 
-//init function - display time
+//init function - display time, everything is blank
 function init() {
     todayDateRender();
     resetDisplay();
 }
 
-
-//=======================================================
+//=======================================================break=======================================================
 
 init();
 
@@ -132,7 +131,7 @@ $('#search-btn').click(function(event) {
     event.preventDefault();
 
     resetDisplay();
-    setTimeout(fetchCoordinates , 500)
+    setTimeout(fetchCoordinates, 500)
 })
 
 //click function - show past searches - event delegation?????????????????????
