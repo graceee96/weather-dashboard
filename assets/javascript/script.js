@@ -46,19 +46,20 @@ function fetchCoordinates() {
                 latitude = data[0].lat;
                 longitude = data[0].lon;
 
-                return (latitude, longitude)
+                renderCurrentWeather();
             }
 
             // nest render function here
-            renderCurrentWeather();
+            
         });
 }
 
 //fetch - render weather onto page (might have to nest fetch within fetch) & create history button
 function renderCurrentWeather() {
+    // fetchCoordinates();
     var units = $('#select-units').val();
 
-    var currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840'
+    var currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&appid=27f987ed5ee13dd96fdf2948248ce840'
 
     fetch(currentWeatherURL)
         .then(function(response) {
@@ -69,16 +70,16 @@ function renderCurrentWeather() {
             
             $('#city').text(data.name);
 
-            setInterval(function() {
-                var localTime = data.dt;
+            // setInterval(function() {
+            //     var localTime = data.dt;
 
-                $('#local-time').text(now.unix(localTime++).format('HH:mm'))
-            }, 1000);
+            //     $('#local-time').text(now.unix(localTime++).format('HH:mm'))
+            // }, 1000);
 
             $('#current-temp').text(data.main.temp + '°');
             $('#feels-like').text(data.main.feels_like + '°');
             $('#current-humidity').text(data.main.humidity + '%');
-            $('#current-temp').text(data.wind.speed + ' mph');
+            $('#current-wind').text(data.wind.speed + ' mph');
         })
 }
 
@@ -98,10 +99,12 @@ function init() {
 init();
 
 //click function - show current weather
-$('#search-btn').submit(function(event) {
-    event.preventDefault;
+$('#search-btn').click(function(event) {
+    event.preventDefault();
 
     fetchCoordinates();
+
+    console.log('i am being clicked');
 })
 
 //click function - show past searches
