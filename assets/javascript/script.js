@@ -173,7 +173,7 @@ $('#search-list').on('click', $('.past-search'), function(event) {
 
     citySearch = element.getAttribute('value');
     units = element.getAttribute('data-units');
-    console.log(toSearch);
+    console.log(citySearch);
     console.log(units);
 
     var geocodeURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&appid=27f987ed5ee13dd96fdf2948248ce840';
